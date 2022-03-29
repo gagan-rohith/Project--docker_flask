@@ -1,4 +1,4 @@
-![homepage](https://user-images.githubusercontent.com/78450085/157166311-f0e06775-9b7a-4e42-8ab9-b9923619fc53.jpg)
+This is the link to the website: https://is601-project1.herokuapp.com/
 
 
 # Project Setup![homepage]
