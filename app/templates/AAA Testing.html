@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AAA Testing</title>
+
+</head>
+<body>
+<h1> AAA Testing</h1>
+<p> A test is a procedure that exercises a behavior to determine if it works properly. There are various types of tests, such as unit tests, integration tests, and end-to-end tests, but all functional tests perform the same basic function: they try something and report PASS or FAIL.Each test in the pattern focuses on one particular action. The advantage of this focus is that it clearly separates the configuration of the System Under Test (SUT) from the assertions made on it after the action.</p>
+<p> AAA stands for Arrange, Act, Assert.</p>
+<p> Arrange: The Arrange part is where we set up our environment, i.e. everything we need to run our test code. This includes initializing objects, dependencies, and all data required for the test case.</p>
+<p> Act: The act section is where you act upon the system under test. You call one of its methods: pass the dependencies and capture the output value if any.</p>
+<p> Assert: The assert section allows you to make the claims about the outcome. This may include the return value, the final state of the SUT and its collaborators, or the methods the SUT called on them.</p>
+<p> The main benefit of the AAA pattern is a clear separation of what is being tested from the setup and result verification, which makes the code easier to read and understand. Better readability helps identify key aspects of our tests, thus helping improve the review, maintenance and debugging of our tests.</p>
+<p> The AAA pattern is simple and provides a uniform structure for all tests in the suite. This uniform structure is one of its biggest advantages: once you get used to this pattern, you can read and understand the tests more easily. That, in turn, reduces the maintenance cost for your entire test suite.</p>
+<h3> Here's a basic unit test</h3>
+<div style="background:cornsilk;">
+<div class="container"><div class="line number1 index0 alt2"><code class="python keyword">def</code> <code class="python plain">test_abs_for_a_negative_number():</code></div><div class="line number2 index1 alt1">&nbsp;</div><div class="line number3 index2 alt2"><code class="python spaces">&nbsp;&nbsp;</code><code class="python comments"># Arrange</code></div><div class="line number4 index3 alt1"><code class="python spaces">&nbsp;&nbsp;</code><code class="python plain">negative </code><code class="python keyword">=</code> <code class="python keyword">-</code><code class="python value">5</code></div><div class="line number5 index4 alt2"><code class="python spaces">&nbsp;&nbsp;</code>&nbsp;</div><div class="line number6 index5 alt1"><code class="python spaces">&nbsp;&nbsp;</code><code class="python comments"># Act</code></div><div class="line number7 index6 alt2"><code class="python spaces">&nbsp;&nbsp;</code><code class="python plain">answer </code><code class="python keyword">=</code> <code class="python functions">abs</code><code class="python plain">(negative)</code></div><div class="line number8 index7 alt1"><code class="python spaces">&nbsp;&nbsp;</code>&nbsp;</div><div class="line number9 index8 alt2"><code class="python spaces">&nbsp;&nbsp;</code><code class="python comments"># Assert</code></div><div class="line number10 index9 alt1"><code class="python spaces">&nbsp;&nbsp;</code><code class="python keyword">assert</code> <code class="python plain">answer </code><code class="python keyword">=</code><code class="python keyword">=</code> <code class="python value">5</code></div></div>
+</div>
+<div style="background:cornsilk;">
+<p class="CodeListingCaption"><span style="color:tomato;"><pre>&nbsp;
+&nbsp;&nbsp;
+&nbsp;public class CalculatorTests <strong>(1)</strong>
+&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp; [Fact] <strong>(2)</strong>
+&nbsp;&nbsp;&nbsp;&nbsp; public void Sum_of_two_numbers() <strong>(3)</strong>
+&nbsp;&nbsp;&nbsp;&nbsp; {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Arrange
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; double first = 10;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>(4)</strong>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; double second = 20;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>(4)</strong>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; var calculator = new Calculator(); <strong>(4)</strong>
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Act
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; double result = calculator.Sum(first, second); <strong>(5)</strong>
+&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Assert
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Assert.Equal(30, result); <strong>(6)</strong>
+&nbsp;&nbsp;&nbsp;&nbsp; }
+&nbsp;}
+&nbsp;&nbsp;
+</pre> </code></span></p>
+</div>
+<h3> 1. Class-container for a cohesive set of tests</h3>
+<h3> 2. xUnit’s attribute indicating a test </h3>
+<h3> 3. Name of the unit test</h3>
+<h3> 4. Arrange section</h3>
+<h3> 5. Act section</h3>
+<h3> 6. Assert section</h3>
+<p> It's natural to begin writing the test with the Arrange section. After all, it comes first, followed by the other two. And in the vast majority of cases, this approach works well. However, starting with the Assert section is also an option. If you use Test-Driven Development, which means writing a test before the production code, you may not know enough about a given feature's behavior, which can result in the creation of a faulty test.</p>
+</body>
+</html>

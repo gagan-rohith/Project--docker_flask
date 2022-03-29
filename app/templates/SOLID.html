@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SOLID</title>
+</head>
+<body>
+<H1> SOLID </H1>
+<p>The SOLID principles are a set of five principles that help with code testing, maintenance, and readability. Adopting these principles in code development can lead to more agile software deployment, increased code reusability and scalability, and improved debugging.</p>
+<p> SOLID is the mnemonic acronym that refers to each of the principles by its acronym in English. These acronyms are:<br> <br>
+
+Single Responsibility Principle (SRP)<br>
+Open-Closed Principle (OCP)<br>
+Liskov Substitution Principle (LSP)<br>
+ Interface Segregation Principle (ISP)<br>
+Dependency Inversion Principle (DIP)</p> <br>
+
+<p> <h2> Single Responsibility Principle (SRP) </h2><br>
+The first principle of SOLID called the Single Responsibility Principle states that a class should be responsible for only one functionality. In other words, the class should only have a single reason to change.</p> <br>
+<p> <h2> Open-Closed Principle (OCP)</h2> <br>
+The Open/Closed Principle indicates that classes should be open for extension, but closed for modification. In other words, the code should be written in such a way that, when adding new functionality, previously written code, which may be in use by other users, should not be modified.</p> <br>
+<p> <h2> Liskov Substitution Principle (LSP) </h2> <br>
+Liskov’s Principle of Substitution states that classes should be substitutable by instances of their subclasses. To illustrate this principle, we consider the possibility that new birds may be added in the future. </p> <br>
+<p> <h2> Interface Segregation Principle (ISP) </h2> <br>
+The Interface Segregation Principle states that clients should not be forced to rely on methods they do not use and therefore suggests the creation of specific interfaces or classes for such clients.</p> <br>
+<p> <h2> Dependency Inversion Principle (DIP) </h2> <br>
+The last principle called Principle of Dependency Inversion can be separated into two statements. On the one hand, it indicates that abstractions should not depend on details, since details should depend on abstractions.  On the other hand, it indicates that high-level classes should not depend on low-level classes, since both should depend on abstractions. In summary, abstractions should depend on abstractions.</p> <br>
+
+<h2><strong> Factory Method in Calculator:</strong></h2>
+<p>@classmethod <br>
+def create(calc,tuple_list:tuple): <br>
+""Factory Method"" <br>
+return calc(tuple_list)<br>
+</p>
+
+<p> The factory method is a stand-alone design pattern that allows you to create objects without exposing the instantiation logic to the client. The factory method does not adhere to any principles, but it is intended to delegate responsibility for object creation to a different class in order to deal with the issue of creating objects without having to specify the exact class of the object that will be created. Because it is a creation pattern, its only responsibility is to create the object. It also has nothing to do with the interface segregation principle.SOLID principles are just a set of principles to achieve clean code. Few design pattern helps to achieve SOLID principles.</p>
+
+</body>
+</html>

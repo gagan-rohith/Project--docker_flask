@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OOPS on Calculator</title>
+</head>
+<body>
+<H1> OOPS Concepts based on a Calculator Program</H1>
+<p> The main concepts of OOPS are:</p>
+<p>1) Encapsulation </p>
+<p>2) Polymorphism</p>
+<p>3) Abstraction</p>
+<p>4) Inheritance</p>
+
+<h2> Encapsulation:</h2>
+<p>Encapsulation is one of the fundamental concepts in object-oriented programming (OOP). It describes the idea of wrapping data and the methods that work on data within one unit. This puts restrictions on accessing variables and methods directly and can prevent the accidental modification of data. To prevent accidental change, an object’s variable can only be changed by an object’s method. </p> <br>
+
+class cal(object): <br>
+
+def add(self, value_1, value_2):<br>
+        """ This is the add method""" <br>
+        # Call the static method, add to return the sum and set it to the calculator result property <br>
+        self.result = Addition.add(value_1, value_2) <br>
+        return self.result <br>
+<p>Here, we have a function called 'add' which takes the data from the class called addition.<br>
+The result variable stores the data of addition classs as well as the functionality of add function.<br>
+This is how this code shows the concept of encapsulation.</p>
+
+<h2> Polymorphism:</h2>
+<p>The word polymorphism means having many forms. In programming, polymorphism means the same function name (but different signatures) being used for different types.</p>
+def subtract(self, value_1, value_2): <br>
+        " This is the subtract method "<br>
+        self.result = Subtraction.subtract(value_1, value_2)<br>
+        self.get_result()<br> <br>
+self.get_result() - This function can be used with any object by defining the specific class.<br> <br>
+This is how Polymorphism is represented in this code.
+
+<h2> Abstraction: </h2>
+<p> Abstraction is the process of hiding the real implementation of an application from the user and emphasizing only on how to use the application. In Python, abstraction can be achieved using abstract classes and methods.</p>
+<p>@staticmethod<br>
+    def add(tuple_list) <br>
+    """this is a method"""<br>
+    calculation=Addition.create(tuple_list);<br>
+    return calculation.get_result()<br></p>
+<p> def create(tuple_list:tuple) <br>
+    { <br>return tuple_list <br>} </p>
+
+<p>In the above mentioned code, we have the method called create whose data is not shown in the first program. Create has its functionality at a different location. In this way, data abstraction is performed.</p>
+
+<h2> Inheritance </h2>
+<p>Inheritance allows us to define a class that inherits all the methods and properties from another class.
+    Parent class is the class being inherited from, also called base class.
+    Child class is the class that inherits from another class, also called derived class. </p>
+<p> The benefits of inheritance are: <br> <br>
+    It represents real-world relationships well.<br>
+It provides reusability of a code. We don’t have to write the same code again and again. Also, it allows us to add more features to a class without modifying it.<br>
+It is transitive in nature, which means that if class B inherits from another class A, then all the subclasses of B would automatically inherit from class A</p>
+
+def class add(calculator) <br>
+{ <br>
+int (x,y)<br>
+return(x+y);<br>
+} <br>
+
+<p>add is a child class which inherits data from its parent class named calculator. The child class does not declare the values of x and y. The values are inherited from the parent class.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

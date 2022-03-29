@@ -5,17 +5,54 @@
     <title>CI/CD</title>
 </head>
 <body>
-<h2> Continous Integration and Deployment</h2>
+<h1> Continous Integration</h1>
 
-<p> This project was setup priorly to use GitHub actions. Docker, PyCharm were installed and configured before hand. To review code using development server, Heroku is used. First we have to
-connect our pipeline to the corresponding GitHub repository. We may also need to also configure an app.json </p>
-<p> The CD in CI/CD refers to continuous delivery and/or continuous deployment, which are related concepts that sometimes get used interchangeably. Both are about automating further stages of the pipeline, but they’re sometimes used separately to illustrate just how much automation is happening.
-    A major prerequisite to CI/CD is Continuous Integration (CI). CI is an automated process for continually integrating software development changes. CI processes automate the building, testing, and validation of source code. By working with CI capabilities, developers can accelerate their code release cycles, making it less likely to run into long feature development cycles and the challenges that come with it, such as merge conflicts.
+<p> For me, the simplest way to explain what CI is and how it works is to demonstrate how it works with the development of a small feature. Let's say I need to modify some software; it doesn't really matter what the task is; for the time being, I'll assume it's simple and can be completed in a few hours. </p>
+<p> I start by copying the current integrated source to my local development machine. I accomplish this by checking out a working copy from the mainline using a source code management system.</p>
+<p> You can configure repositories in Docker Hub so that they automatically build an image each time you push new code to your source provider. If you have automated tests configured, the new image is only pushed when the tests succeed.
+
+Builds can be added to existing repositories, or added when you create a repository.
+
+From the Repositories section, click into a repository to view its details.
+
+Click the Builds tab.
+
+If you are setting up automated builds for the first time, select the code repository service (GitHub or Bitbucket) where the image’s source code is stored. You may be redirected to the settings page to link the code repository service.
+
+Otherwise, if you are editing the build settings for an existing automated build, click Configure automated builds.
+
+Select the source repository to build the Docker images from.
+
+You might need to specify an organization or user (the namespace) from the source code provider. Once you select a namespace, its source code repositories appear in the Select repository dropdown list.
+
+Optionally, enable autotests.
+
+Review the default Build Rules, and optionally click the plus sign to add and configure more build rules.
+
+Build rules control what Docker Hub builds into images from the contents of the source code repository, and how the resulting images are tagged within the Docker repository.
+
+A default build rule is set up for you, which you can edit or delete. This default set builds from the Branch in your source code repository called master, and creates a Docker image tagged with latest.
+
+For each branch or tag, enable or disable the Autobuild toggle.
+
+Only branches or tags with autobuild enabled are built, tested, and have the resulting image pushed to the repository. Branches with autobuild disabled are built for test purposes (if enabled at the repository level), but the built Docker image is not pushed to the repository.
+
+For each branch or tag, enable or disable the Build Caching toggle.
+
+Build caching can save time if you are building a large image frequently or have many dependencies. You might want to leave build caching disabled to make sure all of your dependencies are resolved at build time, or if you have a large layer that is quicker to build locally.
+
+Click Save to save the settings, or click Save and build to save and run an initial test.
+
+    A webhook is automatically added to your source code repository to notify Docker Hub on every push. Only pushes to branches that are listed as the source for one or more tags trigger a build.</p>
+<h1>Continuous Delivery</h1>
 
 Continuous delivery usually means a developer’s changes to an application are automatically bug tested and uploaded to a repository (like GitHub or a container registry), where they can then be deployed to a live production environment by the operations team. It’s an answer to the problem of poor visibility and communication between dev and business teams. To that end, the purpose of continuous delivery is to ensure that it takes minimal effort to deploy new code.
-
 Continuous deployment can refer to automatically releasing a developer’s changes from the repository to production, where it is usable by customers. It addresses the problem of overloading operations teams with manual processes that slow down app delivery. It builds on the benefits of continuous delivery by automating the next stage in the pipeline.</p>
+<p> Continuous delivery is achieved by continuously integrating the development team's software, building executables, and running automated tests on those executables to detect problems. Furthermore, the executables are pushed into increasingly production-like environments to ensure that the software will work in production. A DeploymentPipeline is used to accomplish this.
+To achieve continuous delivery we will need
 
+a close, collaborative working relationship between everyone involved in delivery (often referred to as a DevOpsCulture) and an extensive automation of all possible parts of the delivery process, usually using a DeploymentPipeline.</p>
+<p> Continuous Delivery and Continuous Deployment are terms that are frequently used interchangeably. Continuous Deployment means that every change is routed through the pipeline and automatically deployed to production, resulting in a large number of production deployments every day. Continuous Delivery simply means that you can perform frequent deployments but may choose not to do so, typically because businesses prefer a slower rate of deployment.</p>
 
 </body>
 </html>
